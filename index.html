@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Coloring Book</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎨 Digital Coloring Book</h1>
+            <p>Select a color and click shapes to fill them</p>
+        </header>
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <!-- Color Palette -->
+            <div class="palette-section">
+                <label for="colorPalette">Color Palette:</label>
+                <div id="colorPalette" class="color-palette">
+                    <div class="color-option" style="background-color: #FF6B6B;" data-color="#FF6B6B" title="Red"></div>
+                    <div class="color-option" style="background-color: #FF9FF3;" data-color="#FF9FF3" title="Pink"></div>
+                    <div class="color-option" style="background-color: #FFA500;" data-color="#FFA500" title="Orange"></div>
+                    <div class="color-option" style="background-color: #FFD93D;" data-color="#FFD93D" title="Yellow"></div>
+                    <div class="color-option" style="background-color: #6BCB77;" data-color="#6BCB77" title="Green"></div>
+                    <div class="color-option" style="background-color: #4D96FF;" data-color="#4D96FF" title="Blue"></div>
+                    <div class="color-option" style="background-color: #9D84B7;" data-color="#9D84B7" title="Purple"></div>
+                    <div class="color-option" style="background-color: #A29BFE;" data-color="#A29BFE" title="Lavender"></div>
+                    <div class="color-option" style="background-color: #00D2D3;" data-color="#00D2D3" title="Cyan"></div>
+                    <div class="color-option" style="background-color: #FF6348;" data-color="#FF6348" title="Crimson"></div>
+                    <div class="color-option" style="background-color: #2C3E50;" data-color="#2C3E50" title="Dark Blue"></div>
+                    <div class="color-option" style="background-color: #FFFFFF; border: 2px solid #ccc;" data-color="#FFFFFF" title="White (Eraser)"></div>
+                </div>
+                <input type="color" id="customColor" class="custom-color-input" title="Pick custom color">
+            </div>
+
+            <!-- Controls -->
+            <div class="controls-section">
+                <button id="undoBtn" class="btn btn-control" title="Undo (Ctrl+Z)">↶ Undo</button>
+                <button id="redoBtn" class="btn btn-control" title="Redo (Ctrl+Y)">↷ Redo</button>
+                <button id="clearBtn" class="btn btn-danger" title="Clear all colors">🗑️ Clear All</button>
+            </div>
+
+            <!-- Zoom Controls -->
+            <div class="zoom-section">
+                <label for="zoomSlider">Zoom:</label>
+                <input type="range" id="zoomSlider" min="50" max="200" value="100" class="zoom-slider">
+                <span id="zoomLevel">100%</span>
+            </div>
+
+            <!-- Export Controls -->
+            <div class="export-section">
+                <button id="saveBtn" class="btn btn-primary" title="Save progress locally">💾 Save Progress</button>
+                <button id="exportBtn" class="btn btn-primary" title="Export as PNG">📥 Export PNG</button>
+                <button id="loadBtn" class="btn btn-secondary" title="Load saved progress">📂 Load Progress</button>
+            </div>
+        </div>
+
+        <!-- Canvas Area -->
+        <div class="canvas-container">
+            <div id="canvasWrapper" class="canvas-wrapper">
+                <svg id="canvas" class="canvas" viewBox="0 0 800 600">
+                    <!-- Coloring book content will be inserted here -->
+                </svg>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span id="statusMessage">Ready to color!</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
